@@ -4,7 +4,7 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-05-05T12:13:57+02:00</updated>
+  <updated>2018-05-05T13:01:45+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
@@ -741,7 +741,7 @@ Threads: 5  Questions: 289  Slow queries: 0  Opens: 166  Flush tables: 1  Open t
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;There&amp;#8217;s nothing with the above. In fact it is a feature and I&amp;#8217;ve had good
+&lt;p&gt;There&amp;#8217;s nothing wrong with the above. In fact it is a feature and I&amp;#8217;ve had good
 legitimate cases for having two different encodings in use for different parts.
 It&amp;#8217;s more a good to know thing, as to improve your decisions on configuration,
 and helping in managing your expectations upon the server&amp;#8217;s behavior regarding

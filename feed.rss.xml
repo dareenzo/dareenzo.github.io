@@ -5,8 +5,8 @@
     <description>Paulo Phagula's Blog on Software Development and related topics
 </description>
     <link>https://dareenzo.github.io/</link>
-    <pubDate>Sat, 05 May 2018 12:13:57 +0200</pubDate>
-    <lastBuildDate>Sat, 05 May 2018 12:13:57 +0200</lastBuildDate>
+    <pubDate>Sat, 05 May 2018 13:01:45 +0200</pubDate>
+    <lastBuildDate>Sat, 05 May 2018 13:01:45 +0200</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -735,7 +735,7 @@ Threads: 5  Questions: 289  Slow queries: 0  Opens: 166  Flush tables: 1  Open t
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;There&amp;#8217;s nothing with the above. In fact it is a feature and I&amp;#8217;ve had good
+&lt;p&gt;There&amp;#8217;s nothing wrong with the above. In fact it is a feature and I&amp;#8217;ve had good
 legitimate cases for having two different encodings in use for different parts.
 It&amp;#8217;s more a good to know thing, as to improve your decisions on configuration,
 and helping in managing your expectations upon the server&amp;#8217;s behavior regarding
