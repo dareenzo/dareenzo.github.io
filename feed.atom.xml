@@ -4,7 +4,7 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-05-05T09:24:21+02:00</updated>
+  <updated>2018-05-05T09:34:32+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
@@ -14,9 +14,9 @@
   
   <entry>
     <title>A few MySQL subtleties and how to go about them</title>
-    <link href="https://dareenzo.github.io/blog/2018/05/04/mysql-subtelities/"/>
+    <link href="https://dareenzo.github.io/blog/2018/05/04/mysql-subtleties/"/>
     <updated>2018-05-04T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2018/05/04/mysql-subtelities</id>
+    <id>https://dareenzo.github.io/blog/2018/05/04/mysql-subtleties</id>
     <content type="html">&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;MySQL is the most widely used database in the world. It is in the LAMP stack
 commonly used by Web Developers and supports many software bundles like
