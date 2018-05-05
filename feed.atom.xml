@@ -4,7 +4,7 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-05-05T09:34:32+02:00</updated>
+  <updated>2018-05-05T11:49:30+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
@@ -43,7 +43,7 @@ a very uncommon way&amp;#8201;&amp;#8212;&amp;#8201;read insecure, non-ANSI comp
 beginner or not, to just fire it and rock on.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;This post is not about ranting about MySQL nor promoting &lt;code&gt;&amp;lt;insert-your-favorite-db-here&amp;gt;&lt;/code&gt;&amp;#8201;&amp;#8212;&amp;#8201;I&amp;#8217;ll do my best to control my emotions, I promise!. Its about sharing details
+&lt;p&gt;This post is not a rant about MySQL nor a promotion of &lt;code&gt;&amp;lt;insert-your-favorite-db-here&amp;gt;&lt;/code&gt;&amp;#8201;&amp;#8212;&amp;#8201;I&amp;#8217;ll do my best to control my emotions, I promise!. Its about sharing details
 on a set of subtleties I found in my experience (coming from SQL Server and Oracle),
 and how you can go about them so you&amp;#8217;re not caught off guard as I was.&lt;/p&gt;
 &lt;/div&gt;
@@ -659,7 +659,7 @@ mysql&amp;gt; SHOW WARNINGS;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Yap your data was truncated just like that. And this also happens on&lt;/p&gt;
+&lt;p&gt;Yap, your data was truncated, just like that! And this also happens on&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
