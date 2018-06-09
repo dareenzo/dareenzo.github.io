@@ -4,7 +4,7 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-05-05T13:42:20+02:00</updated>
+  <updated>2018-06-09T20:06:24+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
@@ -242,7 +242,7 @@ but fail unpredictably at others.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;zeros-in-dates-and-timestamps-0000-00-00-00-00-00&quot;&gt;Zeros in dates and timestamps '0000-00-00 00:00:00'&lt;/h2&gt;
+&lt;h2 id=&quot;zeros-in-dates-and-timestamps-0000-00-00-000000&quot;&gt;Zeros in dates and timestamps '0000-00-00 00:00:00'&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;This is another weird thing about MySQL, it allows for invalid dates containing
@@ -341,7 +341,7 @@ with zeros, which is much worse than what we had to begin with.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;code-timestamp-code-vs-code-datetime-code&quot;&gt;&lt;code&gt;TIMESTAMP&lt;/code&gt; vs. &lt;code&gt;DATETIME&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;timestamp-vs-datetime&quot;&gt;&lt;code&gt;TIMESTAMP&lt;/code&gt; vs. &lt;code&gt;DATETIME&lt;/code&gt;&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Some people unknowingly use these data types as if they were synonymous, but in
@@ -500,7 +500,7 @@ ceremonies and rituals prior to migrating, so&amp;#8230;&amp;#8203;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;the-code-check-code-constraint-is-only-parsed-but-ignored-in-the-end&quot;&gt;The &lt;code&gt;CHECK&lt;/code&gt; constraint is only parsed but ignored in the end&lt;/h2&gt;
+&lt;h2 id=&quot;the-check-constraint-is-only-parsed-but-ignored-in-the-end&quot;&gt;The &lt;code&gt;CHECK&lt;/code&gt; constraint is only parsed but ignored in the end&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;This has been in MySQL since forever and not even MySQL 8 will fix it. MySQL parses
@@ -545,7 +545,7 @@ application.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;aggregations-without-code-group-by-code&quot;&gt;Aggregations without &lt;code&gt;GROUP BY&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;aggregations-without-group-by&quot;&gt;Aggregations without &lt;code&gt;GROUP BY&lt;/code&gt;&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;The problem with allowing this kind of stuff is with the results provided.
@@ -792,7 +792,7 @@ value to something else other than the expect &lt;code&gt;1&lt;/code&gt; or &lt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;bonus-varchar-255-obsession&quot;&gt;Bonus: VARCHAR(255) Obsession&lt;/h2&gt;
+&lt;h2 id=&quot;bonus-varchar255-obsession&quot;&gt;Bonus: VARCHAR(255) Obsession&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;I&amp;#8217;ve seen this one over and over and over &amp;#8230;&amp;#8203; heck, done it myself &amp;#8230;&amp;#8203; anyway&lt;/p&gt;
