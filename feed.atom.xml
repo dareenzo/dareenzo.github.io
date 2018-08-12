@@ -4,7 +4,7 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-06-09T20:06:24+02:00</updated>
+  <updated>2018-08-12T12:51:01+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
@@ -893,7 +893,7 @@ it is what it is.&lt;/p&gt;
 &lt;p&gt;To understand why and how things came to be, we need to look a bit and
 understand JavaScript’s history.
 In the beginning, when Brendan Eich was creating the language, his intention
-was bring &lt;a href=&quot;https://en.wikipedia.org/wiki/Scheme_%28programming_language%29&quot;&gt;Scheme&lt;/a&gt;
+was to bring &lt;a href=&quot;https://en.wikipedia.org/wiki/Scheme_%28programming_language%29&quot;&gt;Scheme&lt;/a&gt;
 into the browser, and that’s where JS gets the whole prototype inheritance
 thing (which doesn’t exist). Overtime though, as Java was the mainstream
 programming language back then, he was asked to “massage” the language as
@@ -998,7 +998,7 @@ as if they were its own.&lt;/p&gt;
 &lt;code&gt;.__proto__&lt;/code&gt; in any object.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;.prototype&lt;/code&gt; is a property that exists in functions, to hold the reference
-to the future “friend” of the objects created by call the function using
+to the future “friend” of the objects created by calling the function using
 the &lt;code&gt;new&lt;/code&gt; operator. Quite a mouthful, so let’s dig into it.&lt;/p&gt;
 
 &lt;p&gt;The first bit that should be clarified is that almost everything in
@@ -1019,7 +1019,7 @@ sum.__proto__ === Function.prototype // =&amp;gt; true
 
 &lt;p&gt;We should turn our focus to the prototype property. What with it?&lt;/p&gt;
 
-&lt;p&gt;So, as said before, during the development of JS Brendan Eich was asked
+&lt;p&gt;So, as said before, during the development of JS, Brendan Eich was asked
 to make it look like Java and so he introduced what Douglas Crockford
 calls pseudo-classical inheritance (again doesn’t exist for real).&lt;/p&gt;
 
