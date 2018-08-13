@@ -4,7 +4,7 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-08-12T12:51:01+02:00</updated>
+  <updated>2018-08-13T12:21:35+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
@@ -1058,7 +1058,7 @@ of zezinho, it was lent to him by the friend.&lt;/p&gt;
 the “Java” people to easily embark into JS and the way it works is with
 &lt;code&gt;new&lt;/code&gt; doing some “stuff” on the background.&lt;/p&gt;
 
-&lt;p&gt;If were to implement &lt;code&gt;new&lt;/code&gt; ourselves it would look like:&lt;/p&gt;
+&lt;p&gt;If we were to implement &lt;code&gt;new&lt;/code&gt; ourselves it would look like:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;/**
     @param {function} constructorFunction - the constructor function
@@ -1147,20 +1147,20 @@ zezinho.isHuman() // =&amp;gt;
 &lt;ul&gt;
   &lt;li&gt;There’s no inheritance in JavaScript. Only property delegation and copying.
     &lt;ul&gt;
-      &lt;li&gt;If a property is removed from the “friended object” object the other object no longer can use it&lt;/li&gt;
-      &lt;li&gt;As we saw in the &lt;code&gt;objectCreate&lt;/code&gt;, the &lt;code&gt;ownProperties&lt;/code&gt; were copied from another object. We can expand on this and compose objects from others further improving reuse.&lt;/li&gt;
+      &lt;li&gt;If a property is removed from the “friended object” the other object no longer can use it&lt;/li&gt;
+      &lt;li&gt;As we saw in the &lt;code&gt;objectCreate&lt;/code&gt; example, the &lt;code&gt;ownProperties&lt;/code&gt; were copied from another object. We can expand on this and compose objects from others further improving reuse.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;There’s only one way of creating objects and that’s with object literals. &lt;code&gt;new&lt;/code&gt; and &lt;code&gt;Object.create&lt;/code&gt; just create the literal internally, add properties to it, link to a prototype and return it. No magic! We can implement this ourselves&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;__proto__&lt;/code&gt; is a property of all objects (even functions)&lt;/li&gt;
-  &lt;li&gt;prototype exists as two concepts:
+  &lt;li&gt;Prototype exists as two concepts:
     &lt;ol&gt;
       &lt;li&gt;the friend object to which objects delegate property lookup (&lt;code&gt;__proto__&lt;/code&gt;) and&lt;/li&gt;
-      &lt;li&gt;the property of all functions used to keep future friend (read &lt;code&gt;__proto__&lt;/code&gt;) object of new objects created by calling the function using the &lt;code&gt;new()&lt;/code&gt; operator&lt;/li&gt;
+      &lt;li&gt;the property of all functions used to keep the future friend (read &lt;code&gt;__proto__&lt;/code&gt;) object of new objects created by calling the function using the &lt;code&gt;new()&lt;/code&gt; operator.&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;Prototypes exist as a form reuse. And the way they’ve been made / thought-of, they have a beautiful side-effect that the classical inheritance object-oriented form of reuse doesn’t have, which is to save memory. That is, in the classical form, each instance of an object has all the details about it (the whole pack of properties it inherited), while with prototypes only references are kept to where to find the properties, so rather than say 1000 copies only 1 exists. This is exceptionally well thought, and is specially useful given the resource constraint limits imposed by the web browsers environment.&lt;/li&gt;
-  &lt;li&gt;The decision to add &lt;code&gt;new&lt;/code&gt; and pseudo-classical pattern just created more confusion and disinformation to the community and language users. It should serve as a lesson to future endeavors&lt;/li&gt;
+  &lt;li&gt;Prototypes exist as a form reuse. And the way they’ve been made / thought-of, has a beautiful side-effect that the classical inheritance object-oriented form of reuse doesn’t have, which is to save memory. That is, in the classical form, each instance of an object has all the details about it (the whole pack of properties it inherited), while with prototypes only references are kept to where to find the properties, so rather than say 1000 copies only 1 exists. This is exceptionally well thought, and is specially useful given the resource constraint limits imposed by the web browsers environment.&lt;/li&gt;
+  &lt;li&gt;The decision to add &lt;code&gt;new&lt;/code&gt; and pseudo-classical pattern just created more confusion and disinformation to the community and language users. It should serve as a lesson to future endeavors.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;closing&quot;&gt;Closing&lt;/h2&gt;
