@@ -4,13 +4,649 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-10-26T16:36:38+02:00</updated>
+  <updated>2018-10-26T16:38:01+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
     <email>pphagula@gmail.com</email>
   </author>
 
+  
+  <entry>
+    <title>Test Doubles: A Primer</title>
+    <link href="https://dareenzo.github.io/blog/2018/10/24/test-doubles-a-primer/"/>
+    <updated>2018-10-24T00:00:00+02:00</updated>
+    <id>https://dareenzo.github.io/blog/2018/10/24/test-doubles-a-primer</id>
+    <content type="html">&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This article emerged as an attempt to provide a more in-depth response to the
+following question, posted by &lt;a href=&quot;https://twitter.com/ivanbila&quot;&gt;Ivan&lt;/a&gt; on the
+&lt;a href=&quot;http://mozdevz.org/en/&quot;&gt;MozDevz&lt;/a&gt; &lt;a href=&quot;https://t.me/MozDevz&quot;&gt;group on Telegram&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What’s the difference between a Mock and a Stub?
+Can anyone make this clearer?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Thanks in Advance&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;Ivan Bila, on the MozDevz group on Telegram&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In order to ease understanding by all, I&amp;#8217;ll start by providing a bit more of context
+as to what he&amp;#8217;s talking about&amp;#8201;&amp;#8212;&amp;#8201;test doubles&amp;#8201;&amp;#8212;&amp;#8201;, why we need them, and when we
+should use them. Then, address the question more directly by providing &lt;a href=&quot;#taxonomy&quot;&gt;A taxonomy of test doubles&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Even though the example code is written using a particular language,
+testing framework, and mocking library
+(PHP, &lt;a href=&quot;https://phpunit.de&quot;&gt;PHPUnit&lt;/a&gt;, and &lt;a href=&quot;https://github.com/phpspec/prophecy&quot;&gt;Prophecy&lt;/a&gt;
+&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_1&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_1&quot; title=&quot;View footnote.&quot;&gt;1&lt;/a&gt;]&lt;/sup&gt;
+),
+the content and ideas are generic and can be used in any other platform with any
+other libraries of choice. I&amp;#8217;d be remiss though, if I didn&amp;#8217;t tell you that,
+depending on your platform of choice, you may not find direct equivalents of the
+constructs used here. Regardless, getting bigger picture is what&amp;#8217;s important,
+since then you can port the ideas to whatever constructs are more idiomatic to
+your platform.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;what-are-test-doubles&quot;&gt;What are Test Doubles&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Test Double is a generic term for any case where you replace a production object
+or procedure with another for testing purposes. In automated unit testing, a test
+double replaces an object on which the System Under Test (SUT) depends on.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Test doubles are popularly (and incorrectly) called Mock objects, but in reality,
+a mock object is a very specific type of test double.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The word &quot;mock&quot; is sometimes used in an informal way to refer to the
+whole family of objects that are used in tests. They are called test doubles.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;Robert C. Martin&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8230;&amp;#8203;They were introduced at XP2000 in a paper called
+&lt;a href=&quot;http://connextra.com/aboutUs/mockobjects.pdf&quot;&gt;Endo-Testing: Unit Testing with Mock Objects&lt;/a&gt;,
+and it took a long time after that for them to gain popularity.
+Their role in software development was still being fleshed out in 2004 when
+&lt;a href=&quot;http://jmock.org/oopsla2004.pdf&quot;&gt;Mock Roles, Not Objects&lt;/a&gt; was published.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;&lt;a href=&quot;https://www.destroyallsoftware.com/blog/2014/tdd-straw-men-and-rhetoric&quot;&gt;TDD, Straw Men, and Rhetoric&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;The key reason for tests doubles is to help us design how our objects
+communicate&lt;/strong&gt;. They help in verifying indirect output of the SUT, by checking
+that it interacted with it&amp;#8217;s (direct or indirect) collaborators in an expected
+way. We do that by replacing the objects the SUT depends on with doubles that
+record how they are called, such that, we can check if the SUT interacted
+with it&amp;#8217;s dependencies as expected or not, if it did it at all. This is illustrated
+in the figure below.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/content/2018/10/testing-mock-objects.png&quot; alt=&quot;Test code stimulating SUT and checking expectations on test doubles&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;title&quot;&gt;Figure 1. Test code stimulating the SUT and checking expectations on test doubles through a Mockery&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Mock objects help us move from state-based testing to interaction-based testing,
+where rather than looking at the objects' state, we look at their interactions and
+behaviour. This stops us from having to add unneeded getters to our code just to
+be able to assert they have the right state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Another reason we use test doubles is for code isolation
+(Read the &quot;&lt;a href=&quot;#warning&quot;&gt;A warning about over-isolating, specially through Mocking&lt;/a&gt;&quot; section below before jumping to conclusions).
+When we&amp;#8217;re testing code that depends on another class, we provide the object with a double
+instance of that class, instead of a real object. That way, we&amp;#8217;re making sure
+that our test will only fail if the SUT is broken, and not if one of it&amp;#8217;s
+dependencies is broken.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Doubles also allow us to replace/override/patch some functions on objects so
+that we can ease testing. An example of that is when you have written an
+encoding algorithm which you want to test. This algorithm uses a function
+&lt;code&gt;getRandomPrime()&lt;/code&gt; from another class (in this example &lt;code&gt;RandomGenerator&lt;/code&gt;).
+For testing the encoding algorithm you need to know the value of the
+parameters and the resulting return value for your assertions. To solve the
+problem, that the return value depends on a random value you can &quot;stub&quot; the
+class &lt;code&gt;RandomGenerator&lt;/code&gt; and tell the function &lt;code&gt;getRandomPrime()&lt;/code&gt; to return 7
+every time it&amp;#8217;s called during the test.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+We can also create double objects from interfaces. This makes a lot of sense
+if we think about it. In many cases, we should actually use &lt;em&gt;doubled&lt;/em&gt;
+interfaces in tests instead of doubled concrete classes. After all, the
+interface is the contract by which classes agree to talk to the outside
+world.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Summarizing, the typical reasons for using test doubles may include:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&quot;These getters we write for testing are cluttering up the design&quot;,
+i.e. adding otherwise unnecessary getters to many objects in order to get
+object state so that we can verify expectations, ultimately cluttering up the
+design&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Difficulties with integration testing - some parts are slow or expensive to test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Non-deterministic behaviour (date &amp;amp; time, web service APIs, pseudo-random functions, etc.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dependency on an external resource: FS, DB, net, printer&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;improve the performance of our tests&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;real object hasn&amp;#8217;t been written yet&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;what you&amp;#8217;re calling has UI/needs human interaction&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;simplify test setup&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;build in smaller increments&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Sometimes it is just plain hard to test the system under test (SUT) because
+it depends on other components that cannot be used in the test environment.
+This could be because they aren&amp;#8217;t available, they will not return the results
+needed for the test or because executing them would have undesirable side
+effects. In other cases, our test strategy requires us to have more control
+or visibility of the internal behaviour of the SUT. When we are writing a
+test in which we cannot (or chose not to) use a real depended-on component
+(DOC), we can replace it with a Test Double. The Test Double doesn&amp;#8217;t have to
+behave exactly like the real DOC; it merely has to provide the same API as
+the real one so that the SUT thinks it is the real one!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;xUnit Test Patterns: Refactoring Test Code - Gerard Meszaros, 2007&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;allowances-and-expectations&quot;&gt;Allowances and Expectations&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When working with Test Doubles it&amp;#8217;s important to make a distinction
+between allowances and expectations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Expectations describe the interactions that are essential to the protocol we&amp;#8217;re
+testing: &quot;if we send this message to the object, we expect to see it send this
+other message to this neighbor&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Allowances support the interaction we&amp;#8217;re testing. We often use them as
+stubs to feed values into the object, to get the object into the right
+state for the behavior we want to test. We also use them to ignore other
+interactions that aren&amp;#8217;t relevant to the current test.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All expectations must be met during a test, but allowances may be matched or not.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Depending on the tools we&amp;#8217;re using it may be very explicit which is which,&amp;#8201;&amp;#8212;&amp;#8201;for instance, In JMock and Mockery the language is very explicit, but Jasmine and
+Prophet not so much&amp;#8201;&amp;#8212;&amp;#8201;but what&amp;#8217;s more important is the concept and having in
+mind what each other is.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock tip&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-tip&quot; title=&quot;Tip&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+Allow Queries; Expect Commands
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;taxonomy&quot;&gt;A taxonomy of test doubles&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Terms like &lt;strong&gt;fakes&lt;/strong&gt;, &lt;strong&gt;mocks&lt;/strong&gt;, and &lt;strong&gt;stubs&lt;/strong&gt; are often used interchangeably,
+however they are not the same. Each replaces a real object in the test
+environment but the behavior can be quite different:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dummy&quot;&gt;Dummy&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Replaces an object typically as an input to fill parameter lists, that
+isn&amp;#8217;t used in the test but is needed for the test setup (arranging).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s methods just return null or comply with their signature, i.e. if it
+must return a string, it will return an empty string.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You pass it into something when you don&amp;#8217;t care how it&amp;#8217;s used.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The example we&amp;#8217;re going to use if of a simple login system, that requires an
+authorizer object to check for acceptable username/password combinations. Our
+SUT is the &lt;code&gt;System&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We&amp;#8217;ll be using Prophecy, and simply put, the way it works, is by having a prophet
+specify/&quot;predict&quot; the future behavior of objects of interest (prophecies) and then later
+check that the predictions were met or not. PHPUnit has built-in support for Prophecy
+and we can used it in our tests by accessing the variable &lt;code&gt;$this&amp;#8594;prophet&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;php&quot;&gt;&lt;span class=&quot;inline-delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;System&lt;/span&gt; {
+    &lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;__construct&lt;/span&gt;(&lt;span class=&quot;constant&quot;&gt;Authorizer&lt;/span&gt; &lt;span class=&quot;local-variable&quot;&gt;$authorizer&lt;/span&gt;) {
+        &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;authorizer = &lt;span class=&quot;local-variable&quot;&gt;$authorizer&lt;/span&gt;;
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;logIn&lt;/span&gt;(&lt;span class=&quot;local-variable&quot;&gt;$username&lt;/span&gt;, &lt;span class=&quot;local-variable&quot;&gt;$password&lt;/span&gt;) {
+        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;authorizer-&amp;gt;authorize(&lt;span class=&quot;local-variable&quot;&gt;$username&lt;/span&gt;, &lt;span class=&quot;local-variable&quot;&gt;$password&lt;/span&gt;)) {
+            &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;loginCount++;
+        }
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;getLoginCount&lt;/span&gt;() {
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;loginCount;
+    }
+    &lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;
+}
+
+&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;SystemTest&lt;/span&gt; {
+  &lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;
+  &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_newly_created_system_has_no_logged_in_users&lt;/span&gt;() {
+      &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt; = &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;prophet-&amp;gt;prophesize(&lt;span class=&quot;constant&quot;&gt;Authorizer&lt;/span&gt;::&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt;); &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+      &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;predefined&quot;&gt;System&lt;/span&gt;(&lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;reveal()); &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+
+      &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;assertEqual(&lt;span class=&quot;integer&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt;-&amp;gt;getLoginCount()); &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+  }
+  &lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Using the &lt;code&gt;prophet&lt;/code&gt; object we create a new prophecy for an &lt;code&gt;Authorizer::class&lt;/code&gt;.
+Using the created prophecy object we can specify how the  &lt;code&gt;Authorizer&lt;/code&gt; object
+will behave and what might our expectations be about it regarding how our SUT
+interacts with it, i.e. we can say what it should do when poked in a certain way,
+record what is done to it, and be able to check how the SUT interacted with it,
+if it did at all.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;by revealing a prophecy we obtain an actual test double object, which we can
+then use with our SUT. In this example we didn&amp;#8217;t specify any allowances nor
+expectations on the prophecy, and thus when revealing it all we&amp;#8217;ll get is a dummy
+for the &lt;code&gt;Authorizer&lt;/code&gt; class. We know the SUT won&amp;#8217;t/shouldn&amp;#8217;t interact with dummy
+during this test and that&amp;#8217;s why we stay at that. We just need the dummy because
+the &lt;code&gt;System&lt;/code&gt; demands and &lt;code&gt;Authorizer&lt;/code&gt;, even though it won&amp;#8217;t use it.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Finally we invoke our SUT and assert it behaved correctly.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;stub&quot;&gt;Stub&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Provides a preset (canned) answer to method calls that we have decided ahead
+of time, usually not responding at all to anything outside what&amp;#8217;s programmed
+in for the test.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;With stubs, you don&amp;#8217;t care how many times (if at all) the stub is called.
+Stubs are used to provide &quot;indirect input&quot; to the system under test.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;php&quot;&gt;&lt;span class=&quot;inline-delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_counts_successfully_authorized_logIns&lt;/span&gt;() {
+    &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt; = &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;prophet-&amp;gt;prophesize(&lt;span class=&quot;constant&quot;&gt;Authorizer&lt;/span&gt;::&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt;);
+    &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;predefined&quot;&gt;System&lt;/span&gt;(&lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;reveal());
+
+    &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;authorize(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dareenzo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;)-&amp;gt;willReturn(&lt;span class=&quot;predefined-constant&quot;&gt;true&lt;/span&gt;); &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+
+    &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt;-&amp;gt;logIn(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dareenzo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;); &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+
+    &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;assertSame(&lt;span class=&quot;integer&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt;-&amp;gt;getLoginCount()); &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;In this case we define an allowance. Our SUT or any other involved object in
+our test can interact with the stubbed &lt;code&gt;Authorizer&lt;/code&gt; object, and call &lt;code&gt;authorize()&lt;/code&gt;,
+which in turn will return true (regardless of the params in this particular case).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;We invoke the SUT which in turn will interact with the stubbed class, and finally
+raise the number of login counts.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Lastly we check our expectations on the SUT.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Put simply a stub is a &quot;When I say 'marco', you say 'polo'&quot;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock important&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-important&quot; title=&quot;Important&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+We could&amp;#8217;ve constrained the stub to only work for some params and not
+for others, in order to make our test more valid.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;spy-️&quot;&gt;Spy 🕵️&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Acts as a higher level stub, that allows us to also record information about
+what happened with this test double and how it was called (by the tested
+code). One form of this might be an email service that records how many
+messages it has sent or a login service that records what parameters were use
+to call a method on it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It records what functions were called, with what arguments, when, and how often.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Spies are used for verifying &quot;indirect output&quot; of the tested code, by
+verifying expectations on how the tested code interacted with the test double
+afterwards the tested code is executed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;php&quot;&gt;&lt;span class=&quot;inline-delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_counts_successfully_authorized_logins&lt;/span&gt;() {
+    &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt; = &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;prophet-&amp;gt;prophesize(&lt;span class=&quot;constant&quot;&gt;Authorizer&lt;/span&gt;::&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt;);
+    &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;predefined&quot;&gt;System&lt;/span&gt;(&lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;reveal());
+
+    &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;authorize(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dareenzo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;)-&amp;gt;willReturn(&lt;span class=&quot;predefined-constant&quot;&gt;true&lt;/span&gt;);  &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+
+    &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt;-&amp;gt;logIn(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dareenzo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;);
+
+    &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;authorize(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dareenzo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;)-&amp;gt;shouldHaveBeenCalled(); &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Just like before we stub a method on the authorizer which we know the SUT is
+going to call.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Notice here that we no longer use some form of assertion, instead we use the
+prophecy to check wether the SUT did the right thing and called our spy with the
+expected params &lt;code&gt;('dareenzo', '123')&lt;/code&gt;. Our verification could be even more thorough,
+say something like checking that it was called only once.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;mock&quot;&gt;Mock&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Acts as a higher level stub, that is pre-programmed with expectations,
+including the ability to both respond to calls they know about and don&amp;#8217;t know
+about, i.e. they&amp;#8217;re are pre-programmed with expectations which form a
+specification of the calls they expect to receive.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;They can throw an exception if they receive a call they don&amp;#8217;t expect and are
+checked during verification to ensure they got all the calls they were
+expecting.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Mocks are used for verifying &quot;indirect output&quot; of the tested code, by
+defining expectations on how the tested code should interact with the double,
+before the tested code is executed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;php&quot;&gt;&lt;span class=&quot;inline-delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_counts_successfully_authorized_logins&lt;/span&gt;() {
+    &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt; = &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;prophet-&amp;gt;prophesize(&lt;span class=&quot;constant&quot;&gt;Authorizer&lt;/span&gt;::&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt;);
+    &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;predefined&quot;&gt;System&lt;/span&gt;(&lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;reveal());
+
+    &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;authorize(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dareenzo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;)-&amp;gt;willReturn(&lt;span class=&quot;predefined-constant&quot;&gt;true&lt;/span&gt;); &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    &lt;span class=&quot;local-variable&quot;&gt;$authProphecy&lt;/span&gt;-&amp;gt;authorize()-&amp;gt;shouldBeCalled(); &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+
+    &lt;span class=&quot;local-variable&quot;&gt;$system&lt;/span&gt;-&amp;gt;logIn(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dareenzo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;); &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+
+    &lt;span class=&quot;local-variable&quot;&gt;$this&lt;/span&gt;-&amp;gt;prophet-&amp;gt;checkPredictions(); &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;We start by stubbing some behaviour we know is going to be required by the SUT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Then we specify our expectation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;3&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Invoke the SUT and hope it will satisfy our expectation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;4&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Finally, we check with our prophet if our predictions were met or not.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;fake&quot;&gt;Fake&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Replaces an object for which we need a simplified version of the
+original/real object, typically to achieve speed improvements or to eliminate
+side effects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Fake objects actually have working implementations, but usually take some
+shortcut which makes them unsuitable for production (an &lt;code&gt;InMemoryRepository&lt;/code&gt; is
+a good example).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Unlike other test doubles, no mocking framework is used to create fakes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;ll refrain from showing a coding example, as I think the idea is very clear for
+this one. If you&amp;#8217;re testing something that interacts with nukes, don&amp;#8217;t launch
+the bloody nukes, use a paper fake for now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Put in a simpler way:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Dummy &amp;#8594; I do nothing at all but to fill parameter list&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Stub &amp;#8594; canned Answers&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spy &amp;#8594; stubs + interaction recording (for late interaction expectations verification)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mock &amp;#8594; stubs + expectations on interaction&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fake &amp;#8594; I seem real but no&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Just to further clarify Spies and Mocks are similar, the difference between
+them is that, with Spies we use them and then check expectations afterwards;
+while with Mocks we define the expectations beforehand and only then we use
+them&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;warning&quot;&gt;A warning about over-isolating, specially through Mocking&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Due to wrong influences, many people fall for relentless isolation and end-up
+finding solace in test doubles as their magic tool for helping in isolating
+parts, yet they&amp;#8217;re just painting themselves into a corner with a painful cost
+to get out from.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Mocking is about object communication and interface discovery, using it for isolation,
+specially from 3rd party code is a misuse, in fact a general rule of thumb when
+mocking is &quot;do not mock what you don&amp;#8217;t own&quot;. Wrappers and Anti-Corruption Layers
+are more appropriate tools for avoiding contamination by 3rd code than mock objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Additionally, over-mocking can usually have the effect of duplicating implementation
+code in the tests as we try to mock the behaviour of objects. This code quickly
+gets outdated as we change the production code, and give us the work of trying to
+keep production and test code in sync. We should refrain from this and try as much
+as possible to use real collaborators when possible, as Sandi Metz and Katrina Owen
+put it:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When your tests use the same collaborators as your application, they always
+break when they should. The value of this cannot be underestimated&amp;#8201;&amp;#8212;&amp;#8201;Sandi Metz &amp;amp; Katrina Owen&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The bestest&amp;#8201;&amp;#8212;&amp;#8201;pun intended&amp;#8201;&amp;#8212;&amp;#8201;resource on Mocking is the
+&lt;a href=&quot;http://www.growing-object-oriented-software.com&quot;&gt;Growing Object-Oriented Software, Guided by Tests (GOOS)&lt;/a&gt;
+book by Steve Freeman and Nat Pryce.
+They&amp;#8217;re the pioneers of the technique and better than anyone took the time to
+distill their experience with using Mock Objects in the book.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;With that said, I can&amp;#8217;t recommend more the following two talks, they&amp;#8217;re made by
+the very pillars of testing in PHP community.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Recommended Video on Mocking:
+&lt;a href=&quot;https://www.youtube.com/watch?v=AHizK2kpukk&quot;&gt;Design how your objects talk to each other through mocking - Konstantin Kudryashov&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Recommended video on not over isolating through mocking:
+&lt;a href=&quot;https://www.youtube.com/watch?v=LdUKfbG713M&quot;&gt;Lies You&amp;#8217;ve Been Told About Testing - Adam Wathan - Laracon Online 2017&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;closing&quot;&gt;Closing&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So what do you say, guys and gals, Ivan, is it clear now?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_1&quot;&gt;
+&lt;a href=&quot;#_footnoteref_1&quot;&gt;1&lt;/a&gt;. If you wonder why I didn&amp;#8217;t use PHPUnit&amp;#8217;s built-in mocking facilities, it&amp;#8217;s because they&amp;#8217;re pretty much only there to keep backwards compatibility. Sebastian Bergmann&amp;#8201;&amp;#8212;&amp;#8201;the creator of PHPUnit&amp;#8201;&amp;#8212;&amp;#8201;himself has said he does not recommend using them, and suggests we use Prophecy, so much so he added &quot;native&quot; support for it onto PHPUnit.
+&lt;/div&gt;
+&lt;/div&gt;</content>
+  </entry>
   
   <entry>
     <title>A few MySQL subtleties and how to go about them</title>
