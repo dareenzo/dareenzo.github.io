@@ -4,7 +4,7 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-10-26T16:38:01+02:00</updated>
+  <updated>2018-10-26T17:27:47+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
@@ -602,7 +602,10 @@ put it:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;When your tests use the same collaborators as your application, they always
-break when they should. The value of this cannot be underestimated&amp;#8201;&amp;#8212;&amp;#8201;Sandi Metz &amp;amp; Katrina Owen&lt;/p&gt;
+break when they should. The value of this cannot be underestimated&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;Sandi Metz &amp;amp; Katrina Owen&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
