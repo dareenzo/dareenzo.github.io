@@ -5,9 +5,223 @@
     <description>Paulo Phagula's Blog on Software Development and related topics
 </description>
     <link>https://dareenzo.github.io/</link>
-    <pubDate>Sun, 28 Oct 2018 22:05:08 +0200</pubDate>
-    <lastBuildDate>Sun, 28 Oct 2018 22:05:08 +0200</lastBuildDate>
+    <pubDate>Thu, 08 Nov 2018 20:30:00 +0200</pubDate>
+    <lastBuildDate>Thu, 08 Nov 2018 20:30:00 +0200</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>Splitting and Naming Test Cases Better</title>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When writing unit tests, one questionable thing that I&amp;#8217;ve noticed people doing,
+is having a production class, and for it create a &quot;respective&quot; test class, and
+then fill it with tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Usually, these tests are named after the methods of the production class.
+This is a known bad-practice, since by doing that we&amp;#8217;re tying our tests to
+the implementation. Which means that soon when the production class changes,
+we&amp;#8217;ll have to cascade the changes into our tests so they can still run,
+breaking the premise of unit tests serving as a safety-net for preventing
+regressions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Luckily, there are many articles warning against this practice, so pretty
+much everyone gets over it after a reasonable while.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The next stage developers move to, is to start naming the tests more properly
+as phrases. That improves things a lot, however, particularly when using
+XUnit frameworks like &lt;a href=&quot;https://phpunit.de&quot;&gt;PHPUnit&lt;/a&gt;, there&amp;#8217;s still one
+under-addressed step that should be taken: Splitting and naming test cases
+properly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The idea is: if state influences behaviour, then we should specify what is
+the expected behavior of something under all interesting states/contexts/cases.
+For instance, the way a banking account should behave when in overdraft is
+different from when the account has balance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Getting back to what I said earlier, the typical test case for a Stack would
+be written like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;php&quot;&gt;&lt;span class=&quot;inline-delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;StackTest&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;TestCase&lt;/span&gt; {
+  &lt;span class=&quot;comment&quot;&gt;// body with tests&lt;/span&gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The problem with this is that test cases like this don&amp;#8217;t live up to what
+they claim to be. They claim to be test cases (&lt;code&gt;extends TestCase&lt;/code&gt;) but no one
+can identify from their names what is the case under test, if not only the
+system under test (SUT). And as a result, they end-up containing tests for all
+kinds of cases. Making it difficult for someone to infer what are the special
+cases for the behavior of the stack&amp;#8201;&amp;#8212;&amp;#8201;or whatever is the SUT.
+Test cases like these, don&amp;#8217;t serve as good documentation, which is one
+of the roles that tests should play.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A test case should be named as to represent the interesting case under which
+the SUT will be tested. If our production class is for instance a &lt;code&gt;Stack&lt;/code&gt;
+then we probably want to have &lt;code&gt;A_new_stack, An_empty_stack&lt;/code&gt; or &lt;code&gt;A_non_empty_stack&lt;/code&gt;
+test cases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In XUnit this would be something like:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;php&quot;&gt;&lt;span class=&quot;inline-delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;StackSpec&lt;/span&gt;;
+
+&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;A_new_stack_Test&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;TestCase&lt;/span&gt; {
+  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_has_no_depth&lt;/span&gt;() {}
+}
+
+&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;An_empty_stack_Test&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;TestCase&lt;/span&gt; {
+  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_throws_an_error_when_queried_for_its_top_item&lt;/span&gt;() {}
+  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_throws_when_popped&lt;/span&gt;() {}
+  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_acquires_depth_by_retaining_a_pushed_item_as_its_top&lt;/span&gt;() {}
+}
+
+&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;A_non_empty_stack_Test&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;TestCase&lt;/span&gt; {
+  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_becomes_deeper_by_retaining_a_pushed_item_as_its_top&lt;/span&gt;() {}
+  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_when_popping_reveals_tops_in_reverse_order_of_pushing&lt;/span&gt;() {}
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Notice how the code makes more sense now. Those classes are real Test Cases.
+When you have a test case named &lt;code&gt;StackTest&lt;/code&gt;, what is really the case? But when
+you have &lt;code&gt;An_empty_stack_Test&lt;/code&gt; then the subject and case under test become clear.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Knowing this, some people choose to embed the case inside the function
+names, more or less like so:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;php&quot;&gt;&lt;span class=&quot;inline-delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;StackTest&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;TestCase&lt;/span&gt; {
+  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_when_empty_has_no_depth&lt;/span&gt;() {}
+  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;test_when_not_empty_reveals_tops_in_reverse_order_of_pushing_when_popping&lt;/span&gt;() {}
+  &lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I think this is very good, but I still prefer the first option for these
+reasons:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;with the second option, we have to repeat the case at the beginning of
+each individual test, and depending on how easy it is to describe the
+case we render the test name very long and to an extent unreadable&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;with the second option, we bundle many cases under what is supposed to
+be a single one (see, it says &lt;code&gt;extends TestCase&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;being more granular and having the split provides me with some
+advantages like being able to run just the tests for a designated case.
+(To be fair it works with the long names too by using some filtering
+like &lt;code&gt;phpunit --filter &quot;test_when_not_empty&quot;&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;finally, if we were to put both options through TestDox look how the
+output would come for each of the forms&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;A new Stack
+  - has no depth
+An empty stack
+  - throws when queried for its top item
+  - throws when popped
+  - acquires depth by retaining a pushed item as its top
+A non-empty stack
+  - becomes deeper by retaining a pushed item as its top
+  - when popping reveals tops in reverse order of pushing
+
+# VS
+
+Stack
+  - when new has no depth
+  - when empty throws when queried for its top item
+  - when empty throws when popped
+  - when empty acquires depth by retaining a pushed item as its top
+  - when not empty becomes deeper by retaining a pushed item as its top
+  - when not empty reveals tops in reverse order of pushing when popping&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Using XSpec frameworks like &lt;a href=&quot;https://kahlan.github.io/docs&quot;&gt;Kahlan&lt;/a&gt; simplifies
+this as we have a &quot;proper&quot; construct to split the cases&amp;#8201;&amp;#8212;&amp;#8201;the &lt;code&gt;context&lt;/code&gt;
+function&amp;#8201;&amp;#8212;&amp;#8201;which allows us to logically group related test cases without
+having to resort to multiple classes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Going back to our Stack example we would have something like:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;php&quot;&gt;describe(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {
+  context(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;when new&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {
+    it(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;has no depth&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; () {});
+  });
+
+  context(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;when empty&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {
+    it(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;throws an error when queried for its top item&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {});
+    it(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;throws an error when popped&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {});
+    it(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;acquires depth by retaining a pushed item as its top&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {});
+  });
+
+  context(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;when not empty&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {
+    it(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;becomes deeper by retaining a pushed item as its top&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {});
+    it(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;reveals tops in reverse order of pushing when popped&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;'&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() {});
+  });
+});&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A test case should be just that: it should correspond to a single case.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;Kevlin Henney, &lt;a href=&quot;https://youtu.be/ZsHMHukIlJY&quot;&gt;Seven ineffective coding habits of many programmers&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;</description>
+        <pubDate>Thu, 08 Nov 2018 00:00:00 +0200</pubDate>
+        <link>https://dareenzo.github.io/blog/2018/11/08/splitting-and-naming-test-cases-better/</link>
+        <guid isPermaLink="true">https://dareenzo.github.io/blog/2018/11/08/splitting-and-naming-test-cases-better/</guid>
+        
+        <category>Testing</category>
+        
+        <category>Naming</category>
+        
+        <category>XUnit</category>
+        
+        <category>XSpec</category>
+        
+        <category>PHPUnit</category>
+        
+        <category>Kahlan</category>
+        
+        
+        <category>coding</category>
+        
+      </item>
     
       <item>
         <title>Test Doubles: A Primer
@@ -2565,23 +2779,6 @@ But, in the end we’ll have to upgrade our queries to be compliant with the new
         
         
         <category>Coding</category>
-        
-      </item>
-    
-      <item>
-        <title>Interview during the SeedStars World - Maputo 2015 Contest!</title>
-        <description>&lt;iframe src=&quot;http://rd.videos.sapo.mz/playhtml?file=http://rd.videos.sapo.mz/j9MqVow8bUIEWdRVDebE/mov/1&amp;amp;relatedVideos=none&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; width=&quot;400&quot; height=&quot;225&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Tue, 26 May 2015 00:00:00 +0200</pubDate>
-        <link>https://dareenzo.github.io/blog/2015/05/26/Interview-at-the-Seed-Stars-World-Maputo-Contest-2015/</link>
-        <guid isPermaLink="true">https://dareenzo.github.io/blog/2015/05/26/Interview-at-the-Seed-Stars-World-Maputo-Contest-2015/</guid>
-        
-        <category>Startup</category>
-        
-        <category>Entrepreneurship</category>
-        
-        
-        <category>Startup</category>
         
       </item>
     
