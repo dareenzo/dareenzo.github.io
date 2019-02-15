@@ -5,8 +5,8 @@
     <description>Paulo Phagula's Blog on Software Development and related topics
 </description>
     <link>https://dareenzo.github.io/</link>
-    <pubDate>Fri, 07 Dec 2018 15:31:35 +0200</pubDate>
-    <lastBuildDate>Fri, 07 Dec 2018 15:31:35 +0200</lastBuildDate>
+    <pubDate>Fri, 15 Feb 2019 18:13:59 +0200</pubDate>
+    <lastBuildDate>Fri, 15 Feb 2019 18:13:59 +0200</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -1863,7 +1863,7 @@ and wouldn’t go away when we remove it from animal. In the same way
 that if we add properties to animal, dog will be able to access them
 as if they were its own.&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  dog.hasOwnProperty('makeSound') // =&amp;gt; false
+    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;    dog.hasOwnProperty('makeSound') // =&amp;gt; false
 &lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
 &lt;/ul&gt;

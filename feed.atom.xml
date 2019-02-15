@@ -4,7 +4,7 @@
   <title>Paulo Phagula</title>
   <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
   <link href="https://dareenzo.github.io/"/>
-  <updated>2018-12-07T15:31:35+02:00</updated>
+  <updated>2019-02-15T18:13:59+02:00</updated>
   <id>https://dareenzo.github.io</id>
   <author>
     <name>Paulo Phagula</name>
@@ -1825,7 +1825,7 @@ and wouldn’t go away when we remove it from animal. In the same way
 that if we add properties to animal, dog will be able to access them
 as if they were its own.&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  dog.hasOwnProperty('makeSound') // =&amp;gt; false
+    &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;    dog.hasOwnProperty('makeSound') // =&amp;gt; false
 &lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
