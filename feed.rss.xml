@@ -5,9 +5,56 @@
     <description>Paulo Phagula's Blog on Software Development and related topics
 </description>
     <link>https://dareenzo.github.io/</link>
-    <pubDate>Sun, 10 Mar 2019 00:18:26 +0200</pubDate>
-    <lastBuildDate>Sun, 10 Mar 2019 00:18:26 +0200</lastBuildDate>
+    <pubDate>Sun, 10 Mar 2019 18:55:19 +0200</pubDate>
+    <lastBuildDate>Sun, 10 Mar 2019 18:55:19 +0200</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>Cloud Study Jam Maputo - a short summary</title>
+        <description>&lt;p&gt;Aided by Qwiklabs, as the tool for delivering the content i.e. the explanation,
+exercises and tracking progress we looked into:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;BigQuery - a fully-managed data warehouse that allows us to process data at petabyte scale, fast and easily, which we can use to import and query large structured datasets using the familiar/popular SQL language;&lt;/li&gt;
+  &lt;li&gt;Cloud SQL - a fully-managed database service, providing either MySQL or Postgres, for use in transactional or analytical processing;&lt;/li&gt;
+  &lt;li&gt;and Google Cloud Speech API - a REST service that allows us to get a transcript of audio sent to it. By nature of being a REST service we can use it with any kinds of apps (Android, web, etc.), and among many other use cases it is a door to solving the issue of data entry by use of audio.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The event was held at the Standard Bank incubator; it was sponsored by Google; and
+organized by the GDG Maputo and MozDevz communities.&lt;/p&gt;
+
+&lt;p&gt;The event had a lot of adherence and “got the house full”, among the adherents
+were professionals, students, people from other fields entirely, and even a
+13-year-old who’s already dabbling into CS. This represents the thirst there
+is for learning and leveraging the Cloud and the new technologies it provides.
+Most of the participants were able to comprehend the concepts and complete the
+labs on time, which to me just shows how the barrier of entry is low, and that there’s
+actually so much low-hanging fruit to catch.&lt;/p&gt;
+
+&lt;p&gt;Last but not least, the students got free access to Qwiklabs for a month, which
+allows them to keep practicing at home and further honing their skills.&lt;/p&gt;
+
+&lt;p&gt;I have hopes of hearing in the near future of how the participants are applying
+the skills they learned to tackle their problems and of their communities.&lt;/p&gt;
+
+&lt;p&gt;To one more successful event, Cheers!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 09 Mar 2019 00:00:00 +0200</pubDate>
+        <link>https://dareenzo.github.io/2019/03/10/cloud-study-jam-maputo-summary</link>
+        <guid isPermaLink="true">https://dareenzo.github.io/2019/03/10/cloud-study-jam-maputo-summary</guid>
+        
+        <category>community</category>
+        
+        <category>GCP</category>
+        
+        <category>event</category>
+        
+        <category>review</category>
+        
+        
+        <category>Coding</category>
+        
+      </item>
     
       <item>
         <title>Famous Vim users (that are not famous for using Vim)</title>
@@ -2749,85 +2796,6 @@ know.&lt;/p&gt;
         <category>NoCode</category>
         
         <category>Writing</category>
-        
-        
-        <category>Coding</category>
-        
-      </item>
-    
-      <item>
-        <title>BEM - block__element--modifier</title>
-        <description>&lt;p&gt;Have your browsed through the internet lately and then &lt;em&gt;view-source(d)&lt;/em&gt; on some
-pages? Have you noticed that almost all CSS classes resemble this pattern:
-&lt;code&gt;some-thing__other-thing---change-looks&lt;/code&gt; — mind the double underscores and
-double dashes… Wondering what’s that?&lt;/p&gt;
-
-&lt;p&gt;That my friend, happens to be a newish CSS naming methodology / notation created
-by the good people at &lt;a href=&quot;https://www.yandex.ru/&quot;&gt;Yandex&lt;/a&gt; called &lt;a href=&quot;https://en.bem.info/&quot;&gt;BEM - Block Element Modifier&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The core idea is that web pages are composed by blocks, which in turn contain
-elements which in their turn can vary depending on some condition. (Blocks can
-contain blocks within them BTW).
-So, what is done is when assigning classes names to page elements, name them in
-the form of &lt;code&gt;block__element---modifier&lt;/code&gt; depending on what an element is on the
-page.&lt;/p&gt;
-
-&lt;p&gt;The convention promises to address questions like:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;how to improve codebase reuse?&lt;/li&gt;
-  &lt;li&gt;how to avoid copy-paste?&lt;/li&gt;
-  &lt;li&gt;how to avoid complexity?&lt;/li&gt;
-  &lt;li&gt;how to simplify refactoring and how to get self-documented code?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
-
-&lt;p&gt;To put things into perspective let’s see a practical example of how we would use
-this for the simple login widget bellow&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/content/2016/08/login-widget.png&quot; style=&quot;width:50%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;First the login widget as a whole could be considered a block, so its markup
-would look like&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div class='login-widget'&amp;gt; ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then the text labels and text fields and the button would be considered elements
-of the block, and the markup for the username field could look like&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;input type='text' class='login-widget__text-field'/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And most likely when trying to submit this form without filling it, to signal to
-the user that a required field is not filled, the background color of the text
-field could change to red, and that’s when we a modifier would be applied. The
-markup for that state with the modifier applied could look like&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;input type='text' class='login-widget__text-field login-widget__text-field--empty'&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The adoption of this convention is quite huge, as for instance frameworks like
-&lt;a href=&quot;https://getmdl.io/&quot;&gt;Google material lite&lt;/a&gt; use it. That is probably a sign you
-should have it on your tool belt or get used to it because you’ll see it a lot
-in the future.&lt;/p&gt;
-
-&lt;p&gt;Do you think this can really address the questions above? Let me know by dropping
-a comment bellow.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;References:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.bem.info/methodology/&quot;&gt;Official BEM site&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 02 Aug 2016 00:00:00 +0200</pubDate>
-        <link>https://dareenzo.github.io/blog/2016/08/02/BEM-block-element-modifier/</link>
-        <guid isPermaLink="true">https://dareenzo.github.io/blog/2016/08/02/BEM-block-element-modifier/</guid>
-        
-        <category>CSS</category>
         
         
         <category>Coding</category>
