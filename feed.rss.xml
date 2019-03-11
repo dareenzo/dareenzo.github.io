@@ -5,8 +5,8 @@
     <description>Paulo Phagula's Blog on Software Development and related topics
 </description>
     <link>https://dareenzo.github.io/</link>
-    <pubDate>Sun, 10 Mar 2019 18:55:19 +0200</pubDate>
-    <lastBuildDate>Sun, 10 Mar 2019 18:55:19 +0200</lastBuildDate>
+    <pubDate>Mon, 11 Mar 2019 12:33:39 +0200</pubDate>
+    <lastBuildDate>Mon, 11 Mar 2019 12:33:39 +0200</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -68,6 +68,9 @@ have created a list of famous Vim users and hope it will (mis)guide newbies.&lt;
 
 &lt;p&gt;This list will be updated occasionally (the latest updates will be on the top)
 and revision is highly welcomed.&lt;/p&gt;
+
+&lt;p&gt;NOTE: Where possible I made the videos start exactly where Vim is used so you
+don’t have to look it up for yourself.&lt;/p&gt;
 
 &lt;h2 id=&quot;rasmus-lerdorf---the-creator-of-php&quot;&gt;Rasmus Lerdorf - the creator of PHP&lt;/h2&gt;
 
@@ -170,8 +173,9 @@ and has some for print on sale at &lt;a href=&quot;https://wizardzines.com&quot;
 
 &lt;h2 id=&quot;doctor-krieger&quot;&gt;Doctor Krieger&lt;/h2&gt;
 
-&lt;p&gt;Rumor has it that “everyone’s favorite Hitler” clone on &lt;a href=&quot;https://www.fxnetworks.com/archer&quot;&gt;Archer&lt;/a&gt; uses Vim.
-Proof is yet to be acquired.&lt;/p&gt;
+&lt;p&gt;Doctor Krieger, “everyone’s favorite Hitler clone” from &lt;a href=&quot;https://www.fxnetworks.com/archer&quot;&gt;Archer&lt;/a&gt;
+uses Vim, and you can see him editing and saving a document with it on
+&lt;a href=&quot;https://youtu.be/rxROY4laFRU?t=322&quot;&gt;The Untold Truth Of Archer&lt;/a&gt; YouTube video by Looper.&lt;/p&gt;
 
 &lt;h2 id=&quot;refs&quot;&gt;Refs&lt;/h2&gt;
 
