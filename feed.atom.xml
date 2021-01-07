@@ -1,23 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-  <title>Paulo Phagula</title>
-  <link href="https://dareenzo.github.io/feed.atom.xml" rel="self"/>
-  <link href="https://dareenzo.github.io/"/>
-  <updated>2019-04-15T12:44:54+02:00</updated>
-  <id>https://dareenzo.github.io</id>
-  <author>
-    <name>Paulo Phagula</name>
-    <email>paulo.phagula@gmail.com</email>
-  </author>
-
-  
-  <entry>
-    <title>Cloud Study Jam Maputo - a short summary</title>
-    <link href="https://dareenzo.github.io/2019/03/10/cloud-study-jam-maputo-summary"/>
-    <updated>2019-03-09T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/2019/03/10/cloud-study-jam-maputo-march-summary</id>
-    <content type="html">&lt;p&gt;Aided by Qwiklabs, as the tool for delivering the content i.e. the explanation,
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://dareenzo.github.io/feed.atom.xml" rel="self" type="application/atom+xml" /><link href="https://dareenzo.github.io/" rel="alternate" type="text/html" /><updated>2021-01-07T22:10:17+02:00</updated><id>https://dareenzo.github.io/</id><title type="html">Paulo Phagula</title><subtitle>Paulo Phagula's Blog on Software Development and related topics
+</subtitle><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><entry><title type="html">Cloud Study Jam Maputo - a short summary</title><link href="https://dareenzo.github.io/2019/03/10/cloud-study-jam-maputo-summary" rel="alternate" type="text/html" title="Cloud Study Jam Maputo - a short summary" /><published>2019-03-09T00:00:00+02:00</published><updated>2019-03-09T00:00:00+02:00</updated><id>https://dareenzo.github.io/2019/03/10/cloud-study-jam-maputo-march-summary</id><content type="html" xml:base="https://dareenzo.github.io/2019/03/10/cloud-study-jam-maputo-summary">&lt;p&gt;Aided by Qwiklabs, as the tool for delivering the content i.e. the explanation,
 exercises and tracking progress we looked into:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -43,22 +25,14 @@ allows them to keep practicing at home and further honing their skills.&lt;/p&gt
 &lt;p&gt;I have hopes of hearing in the near future of how the participants are applying
 the skills they learned to tackle their problems and of their communities.&lt;/p&gt;
 
-&lt;p&gt;To one more successful event, Cheers!&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Famous Vim users (that are not famous for using Vim)</title>
-    <link href="https://dareenzo.github.io/2019/02/15/famous-vim-users.html"/>
-    <updated>2019-02-15T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/2019/02/15/famous-vim-users</id>
-    <content type="html">&lt;p&gt;I don’t think using Vim could make you a better programmer, nor do I think that
+&lt;p&gt;To one more successful event, Cheers!&lt;/p&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="community" /><category term="GCP" /><category term="event" /><category term="review" /><summary type="html">Today, we had another Google Cloud Study Jam Maputo event. This time it was focused on introducing the participants to Data Science concepts and how to apply them using Google Cloud Platform’s tools.</summary></entry><entry><title type="html">Famous Vim users (that are not famous for using Vim)</title><link href="https://dareenzo.github.io/2019/02/15/famous-vim-users.html" rel="alternate" type="text/html" title="Famous Vim users (that are not famous for using Vim)" /><published>2019-02-15T00:00:00+02:00</published><updated>2019-02-15T00:00:00+02:00</updated><id>https://dareenzo.github.io/2019/02/15/famous-vim-users</id><content type="html" xml:base="https://dareenzo.github.io/2019/02/15/famous-vim-users.html">&lt;p&gt;I don’t think using Vim could make you a better programmer, nor do I think that
 having a couple of relatively famous middle or old aged people using (or
 previously using) Vim could prove that Vim has some unique power.&lt;/p&gt;
 
-&lt;p&gt;However, when I started, there were a few Vim users that I have high respect
-for, which is one of the reasons that made me continue to play with Vim. Here I
-have created a list of famous Vim users and hope it will (mis)guide newbies.&lt;/p&gt;
+&lt;p&gt;However, when I started using it, there were a few Vim users that I have high
+respect for, which is one of the reasons that made me continue to play with it.
+Here I have created a list of famous Vim users and hope it will (mis)guide
+newbies.&lt;/p&gt;
 
 &lt;p&gt;This list will be updated occasionally (the latest updates will be on the top)
 and revision is highly welcomed.&lt;/p&gt;
@@ -124,11 +98,15 @@ and &lt;a href=&quot;https://csswizardry.com/2017/01/preparing-vim-for-apples-to
 
 &lt;h2 id=&quot;gary-bernhardt---destroy-all-software&quot;&gt;Gary Bernhardt - Destroy all Software&lt;/h2&gt;
 
-&lt;p&gt;Gary Bernhardt is the fastest developer I have ever seen. Yes, even faster than Jeffrey Way.
-He’s most know for his &lt;a href=&quot;https://www.destroyallsoftware.com/talks/wat&quot;&gt;WAT&lt;/a&gt; lightning talk presented at CodeMash 2012,
-which inspired many spin-offs for other programming languages.&lt;/p&gt;
+&lt;p&gt;Gary Bernhardt is the fastest developer I have ever seen. Yes, even faster than
+Jeffrey Way. He’s most known for his
+&lt;a href=&quot;https://www.destroyallsoftware.com/talks/wat&quot;&gt;WAT&lt;/a&gt;
+lightning talk presented at CodeMash 2012, which inspired many spin-offs for
+other programming languages.&lt;/p&gt;
 
-&lt;p&gt;If you’re not convinced checkout his talk &lt;a href=&quot;https://www.youtube.com/watch?v=sCZJblyT_XM&quot;&gt;The UNIX chainsaw&lt;/a&gt; for a preview on how he combines UNIX tooling to get a more productive environment.&lt;/p&gt;
+&lt;p&gt;If you’re not convinced checkout his talk, &lt;a href=&quot;https://www.youtube.com/watch?v=sCZJblyT_XM&quot;&gt;The UNIX chainsaw&lt;/a&gt;
+for a preview on how he combines UNIX tooling to get a more productive
+environment.&lt;/p&gt;
 
 &lt;h2 id=&quot;jeffrey-way---laracasts-founder&quot;&gt;Jeffrey Way - Laracasts founder&lt;/h2&gt;
 
@@ -177,17 +155,7 @@ uses Vim, and you can see him editing and saving a document with it on
   &lt;li&gt;&lt;a href=&quot;http://wenshanren.org/?p=418&quot;&gt;Famous Emacs users (that are not famous for using Emacs) - Original Post for Emacs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.reddit.com/r/vim/comments/34vffh/famous_vim_users/&quot;&gt;Reddit Thread in response to the Emacs post&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.quora.com/Who-are-famous-Perl-Programmers-who-use-Vim-gVim&quot;&gt;Quora - Who are famous Perl Programmers who use Vim/gVim?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</content>
-  </entry>
-  
-  <entry>
-    <title>Splitting and Naming Test Cases Better</title>
-    <link href="https://dareenzo.github.io/blog/2018/11/08/splitting-and-naming-test-cases-better/"/>
-    <updated>2018-11-08T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2018/11/08/splitting-and-naming-test-cases-better</id>
-    <content type="html">&lt;div class=&quot;paragraph&quot;&gt;
+&lt;/ul&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="Vim" /><summary type="html">Having read “Famous Emacs users (that are not famous for using Emacs)”, I thought I’d do the same for Vim, just to keep the war going :trollface:</summary></entry><entry><title type="html">Splitting and Naming Test Cases Better</title><link href="https://dareenzo.github.io/blog/2018/11/08/splitting-and-naming-test-cases-better/" rel="alternate" type="text/html" title="Splitting and Naming Test Cases Better" /><published>2018-11-08T00:00:00+02:00</published><updated>2018-11-08T00:00:00+02:00</updated><id>https://dareenzo.github.io/blog/2018/11/08/splitting-and-naming-test-cases-better</id><content type="html" xml:base="https://dareenzo.github.io/blog/2018/11/08/splitting-and-naming-test-cases-better/">&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;When writing unit tests, one questionable thing that I&amp;#8217;ve noticed people doing,
 is having a production class, and for it create a &quot;respective&quot; test class, and
 then fill it with tests.&lt;/p&gt;
@@ -377,16 +345,8 @@ having to resort to multiple classes.&lt;/p&gt;
 &lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;Kevlin Henney, &lt;a href=&quot;https://youtu.be/ZsHMHukIlJY&quot;&gt;Seven ineffective coding habits of many programmers&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
-&lt;/div&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Test Doubles: A Primer
-</title>
-    <link href="https://dareenzo.github.io/blog/2018/10/24/test-doubles-a-primer/"/>
-    <updated>2018-10-24T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2018/10/24/test-doubles-a-primer</id>
-    <content type="html">&lt;div class=&quot;sect1&quot;&gt;
+&lt;/div&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="Testing" /><category term="Naming" /><category term="XUnit" /><category term="XSpec" /><category term="PHPUnit" /><category term="Kahlan" /><summary type="html">A short discussion of test case naming</summary></entry><entry><title type="html">Test Doubles: A Primer</title><link href="https://dareenzo.github.io/blog/2018/10/24/test-doubles-a-primer/" rel="alternate" type="text/html" title="Test Doubles: A Primer
+" /><published>2018-10-24T00:00:00+02:00</published><updated>2018-10-24T00:00:00+02:00</updated><id>https://dareenzo.github.io/blog/2018/10/24/test-doubles-a-primer</id><content type="html" xml:base="https://dareenzo.github.io/blog/2018/10/24/test-doubles-a-primer/">&lt;div class=&quot;sect1&quot;&gt;
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -1017,15 +977,7 @@ the very pillars of testing in PHP community.&lt;/p&gt;
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_1&quot;&gt;
 &lt;a href=&quot;#_footnoteref_1&quot;&gt;1&lt;/a&gt;. If you wonder why I didn&amp;#8217;t use PHPUnit&amp;#8217;s built-in mocking facilities, it&amp;#8217;s because they&amp;#8217;re pretty much only there to keep backwards compatibility. Sebastian Bergmann&amp;#8201;&amp;#8212;&amp;#8201;the creator of PHPUnit&amp;#8201;&amp;#8212;&amp;#8201;himself has said he does not recommend using them, and suggests we use Prophecy, so much so he added &quot;native&quot; support for it onto PHPUnit.
 &lt;/div&gt;
-&lt;/div&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>A few MySQL subtleties and how to go about them</title>
-    <link href="https://dareenzo.github.io/blog/2018/05/04/mysql-subtleties/"/>
-    <updated>2018-05-04T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2018/05/04/mysql-subtleties</id>
-    <content type="html">&lt;div class=&quot;paragraph&quot;&gt;
+&lt;/div&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="Testing" /><category term="Mocking" /><category term="TDD" /><category term="PHP" /><category term="PHPUnit" /><category term="Prophecy" /><category term="Mockery" /></entry><entry><title type="html">A few MySQL subtleties and how to go about them</title><link href="https://dareenzo.github.io/blog/2018/05/04/mysql-subtleties/" rel="alternate" type="text/html" title="A few MySQL subtleties and how to go about them" /><published>2018-05-04T00:00:00+02:00</published><updated>2018-05-04T00:00:00+02:00</updated><id>https://dareenzo.github.io/blog/2018/05/04/mysql-subtleties</id><content type="html" xml:base="https://dareenzo.github.io/blog/2018/05/04/mysql-subtleties/">&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;MySQL is the most widely used database in the world. It is in the LAMP stack
 commonly used by Web Developers and supports many software bundles like
 WordPress and Drupal which in turn support most of the sites in the internet.&lt;/p&gt;
@@ -1881,15 +1833,7 @@ something fishy, agree with my views, or have something to add.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Re-learning the JavaScript inheritance that doesn't exist</title>
-    <link href="https://dareenzo.github.io/blog/2017/04/06/js-inheritance-doesnt-exist/"/>
-    <updated>2017-04-06T08:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2017/04/06/js-inheritance-doesnt-exist</id>
-    <content type="html">&lt;p&gt;Yes, they lied, big time. All you have is delegation and copying properties.
+&lt;/div&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="Database" /><category term="MySQL" /><category term="SQL" /></entry><entry><title type="html">Re-learning the JavaScript inheritance that doesn’t exist</title><link href="https://dareenzo.github.io/blog/2017/04/06/js-inheritance-doesnt-exist/" rel="alternate" type="text/html" title="Re-learning the JavaScript inheritance that doesn't exist" /><published>2017-04-06T08:00:00+02:00</published><updated>2017-04-06T08:00:00+02:00</updated><id>https://dareenzo.github.io/blog/2017/04/06/js-inheritance-doesnt-exist</id><content type="html" xml:base="https://dareenzo.github.io/blog/2017/04/06/js-inheritance-doesnt-exist/">&lt;p&gt;Yes, they lied, big time. All you have is delegation and copying properties.
 They say it’s inheritance but that is due to JS trying to accommodate the
 classical inheritance object-orientation model to cater for a smooth
 transition of “Java” people into JavaScript.
@@ -2179,16 +2123,7 @@ on &lt;a href=&quot;http://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q&quot
 by &lt;a href=&quot;https://twitter.com/mpjme&quot;&gt;Matthias Johansson&lt;/a&gt;, so I strongly recommend
 watching those to all JS people out there.&lt;/p&gt;
 
-&lt;p&gt;A zillion “Good Monday mornings!” for you Matthias.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Writing reliable and robust code with Design by Contract</title>
-    <link href="https://dareenzo.github.io/blog/2017/01/08/writting-reliable-and-robust-code-with-design-by-contract/"/>
-    <updated>2017-01-08T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2017/01/08/writting-reliable-and-robust-code-with-design-by-contract</id>
-    <content type="html">&lt;h2 id=&quot;emotional-intro&quot;&gt;(Emotional) Intro&lt;/h2&gt;
+&lt;p&gt;A zillion “Good Monday mornings!” for you Matthias.&lt;/p&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="JavaScript" /><category term="Object-Orientation" /><summary type="html">This post is not about getting started with JavaScript OO, it's rather about clearing the confusion in our minds about JavaScript OO concepts. Specifically it's an attempt to mark in my head a simple truth: there's no inheritance in JavaScript...there's no such thing as prototypal inheritance.</summary></entry><entry><title type="html">Writing reliable and robust code with Design by Contract</title><link href="https://dareenzo.github.io/blog/2017/01/08/writting-reliable-and-robust-code-with-design-by-contract/" rel="alternate" type="text/html" title="Writing reliable and robust code with Design by Contract" /><published>2017-01-08T00:00:00+02:00</published><updated>2017-01-08T00:00:00+02:00</updated><id>https://dareenzo.github.io/blog/2017/01/08/writting-reliable-and-robust-code-with-design-by-contract</id><content type="html" xml:base="https://dareenzo.github.io/blog/2017/01/08/writting-reliable-and-robust-code-with-design-by-contract/">&lt;h2 id=&quot;emotional-intro&quot;&gt;(Emotional) Intro&lt;/h2&gt;
 
 &lt;p&gt;Not a day passes without us hearing of some software woe that has happened
 somewhere in the world. Bugs, bugs, bugs users scream…&lt;/p&gt;
@@ -2427,16 +2362,7 @@ Test to assert if it is indeed working properly.&lt;/p&gt;
 
 &lt;p&gt;From the idea of the CQS principle, &lt;a href=&quot;https://twitter.com/gregyoung&quot;&gt;Gregory Young&lt;/a&gt;
 and &lt;a href=&quot;http://udidahan.com&quot;&gt;Udi Dahan&lt;/a&gt; derived &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/dn568103.aspx&quot;&gt;CQRS&lt;/a&gt;,
-which is essentially applying CQS at an architectural level.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Simple JavaScript Currying Using bind</title>
-    <link href="https://dareenzo.github.io/blog/2016/10/12/simple-javascript-currying-using-bind/"/>
-    <updated>2016-10-12T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2016/10/12/simple-javascript-currying-using-bind</id>
-    <content type="html">&lt;p&gt;I was working on a nodejs project with mighty &lt;a href=&quot;https://github.com/giannis&quot;&gt;@giannis&lt;/a&gt;
+which is essentially applying CQS at an architectural level.&lt;/p&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="Design by Contract" /><category term="Python" /><category term="Domain-Driven Design" /><summary type="html">This article explains: what Design by Contract is; how it came to be; why it helps us writing reliable and robust code; and why the technique should be on every developers toolbox. It also provides a code snippet succinctly explaining how it can applied in a simple common day-to-day scenario.</summary></entry><entry><title type="html">Simple JavaScript Currying Using bind</title><link href="https://dareenzo.github.io/blog/2016/10/12/simple-javascript-currying-using-bind/" rel="alternate" type="text/html" title="Simple JavaScript Currying Using bind" /><published>2016-10-12T00:00:00+02:00</published><updated>2016-10-12T00:00:00+02:00</updated><id>https://dareenzo.github.io/blog/2016/10/12/simple-javascript-currying-using-bind</id><content type="html" xml:base="https://dareenzo.github.io/blog/2016/10/12/simple-javascript-currying-using-bind/">&lt;p&gt;I was working on a nodejs project with mighty &lt;a href=&quot;https://github.com/giannis&quot;&gt;@giannis&lt;/a&gt;
 and we had this library that required setting up event handlers, pretty much in
 the usual form of:&lt;/p&gt;
 
@@ -2515,16 +2441,7 @@ and didn’t need to change the code.&lt;/p&gt;
 
 &lt;p&gt;Despite that I’m thankful I found this issue for now I’ve learned this lesson.
 BTW, in FP circles developers call this thing we tried to do with &lt;code&gt;bind&lt;/code&gt;
-&lt;a href=&quot;https://www.sitepoint.com/currying-in-functional-javascript/&quot;&gt;currying&lt;/a&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Improving the Flask cache decorator</title>
-    <link href="https://dareenzo.github.io/blog/2016/08/26/a-better-cache-decorator-for-flask/"/>
-    <updated>2016-08-26T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2016/08/26/a-better-cache-decorator-for-flask</id>
-    <content type="html">&lt;div class=&quot;paragraph&quot;&gt;
+&lt;a href=&quot;https://www.sitepoint.com/currying-in-functional-javascript/&quot;&gt;currying&lt;/a&gt;.&lt;/p&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="JavaScript" /><summary type="html">In this blog post I tell you a short story about how I was introduced to JavaScript function currying&quot;</summary></entry><entry><title type="html">Improving the Flask cache decorator</title><link href="https://dareenzo.github.io/blog/2016/08/26/a-better-cache-decorator-for-flask/" rel="alternate" type="text/html" title="Improving the Flask cache decorator" /><published>2016-08-26T00:00:00+02:00</published><updated>2016-08-26T00:00:00+02:00</updated><id>https://dareenzo.github.io/blog/2016/08/26/a-better-cache-decorator-for-flask</id><content type="html" xml:base="https://dareenzo.github.io/blog/2016/08/26/a-better-cache-decorator-for-flask/">&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;In my rumblings developing flask applications I found the &lt;a href=&quot;http://flask.pocoo.org/docs/0.11/patterns/viewdecorators/#caching-decorator&quot;&gt;caching decorator&lt;/a&gt;.
 The decorator is a short and well-written piece of code, but I feel like it misses
 the few points bellow:&lt;/p&gt;
@@ -2671,15 +2588,7 @@ it&amp;#8217;s a problem with dev-tools. So better test with Firefox Developer E
 is by using far-future expiration dates and changing the URL by overriding the
 &lt;code&gt;url_for&lt;/code&gt; function to include the modified date of the file on disk.
 That way, cache busting is already done from the moment I save the file..&lt;/p&gt;
-&lt;/div&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>dash(hyphen), ndash and mdash</title>
-    <link href="https://dareenzo.github.io/blog/2016/08/03/dash-hyphen-ndash-and-mdash/"/>
-    <updated>2016-08-03T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2016/08/03/dash-hyphen-ndash-and-mdash</id>
-    <content type="html">&lt;p&gt;It is common that developers use some separator on the title tag to separate the
+&lt;/div&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="Flask" /><summary type="html">The article details how we can go about improving the &quot;standard&quot; flask cache decorator, more specifically suggesting an API that easily resembles and relates to the client-side/browser caching-control policy</summary></entry><entry><title type="html">dash(hyphen), ndash and mdash</title><link href="https://dareenzo.github.io/blog/2016/08/03/dash-hyphen-ndash-and-mdash/" rel="alternate" type="text/html" title="dash(hyphen), ndash and mdash" /><published>2016-08-03T00:00:00+02:00</published><updated>2016-08-03T00:00:00+02:00</updated><id>https://dareenzo.github.io/blog/2016/08/03/dash-hyphen-ndash-and-mdash</id><content type="html" xml:base="https://dareenzo.github.io/blog/2016/08/03/dash-hyphen-ndash-and-mdash/">&lt;p&gt;It is common that developers use some separator on the title tag to separate the
 actual page title from the site name, normally using a pipe or mid-dot or even a
 dash/hyphen, thus rendering a title like: &lt;code&gt;About - StackOverflow&lt;/code&gt;.&lt;/p&gt;
 
@@ -2705,382 +2614,4 @@ like “Hunter strode into the room — was he mad?”&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;This is one of those small things in language that is commonly missed but is good
-know.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>BEM - block__element--modifier</title>
-    <link href="https://dareenzo.github.io/blog/2016/08/02/BEM-block-element-modifier/"/>
-    <updated>2016-08-02T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2016/08/02/BEM-block-element-modifier</id>
-    <content type="html">&lt;p&gt;Have your browsed through the internet lately and then &lt;em&gt;view-source(d)&lt;/em&gt; on some
-pages? Have you noticed that almost all CSS classes resemble this pattern:
-&lt;code&gt;some-thing__other-thing---change-looks&lt;/code&gt; — mind the double underscores and
-double dashes… Wondering what’s that?&lt;/p&gt;
-
-&lt;p&gt;That my friend, happens to be a newish CSS naming methodology / notation created
-by the good people at &lt;a href=&quot;https://www.yandex.ru/&quot;&gt;Yandex&lt;/a&gt; called &lt;a href=&quot;https://en.bem.info/&quot;&gt;BEM - Block Element Modifier&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The core idea is that web pages are composed by blocks, which in turn contain
-elements which in their turn can vary depending on some condition. (Blocks can
-contain blocks within them BTW).
-So, what is done is when assigning classes names to page elements, name them in
-the form of &lt;code&gt;block__element---modifier&lt;/code&gt; depending on what an element is on the
-page.&lt;/p&gt;
-
-&lt;p&gt;The convention promises to address questions like:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;how to improve codebase reuse?&lt;/li&gt;
-  &lt;li&gt;how to avoid copy-paste?&lt;/li&gt;
-  &lt;li&gt;how to avoid complexity?&lt;/li&gt;
-  &lt;li&gt;how to simplify refactoring and how to get self-documented code?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
-
-&lt;p&gt;To put things into perspective let’s see a practical example of how we would use
-this for the simple login widget bellow&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/content/2016/08/login-widget.png&quot; style=&quot;width:50%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;First the login widget as a whole could be considered a block, so its markup
-would look like&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div class='login-widget'&amp;gt; ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then the text labels and text fields and the button would be considered elements
-of the block, and the markup for the username field could look like&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;input type='text' class='login-widget__text-field'/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And most likely when trying to submit this form without filling it, to signal to
-the user that a required field is not filled, the background color of the text
-field could change to red, and that’s when we a modifier would be applied. The
-markup for that state with the modifier applied could look like&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;input type='text' class='login-widget__text-field login-widget__text-field--empty'&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The adoption of this convention is quite huge, as for instance frameworks like
-&lt;a href=&quot;https://getmdl.io/&quot;&gt;Google material lite&lt;/a&gt; use it. That is probably a sign you
-should have it on your tool belt or get used to it because you’ll see it a lot
-in the future.&lt;/p&gt;
-
-&lt;p&gt;Do you think this can really address the questions above? Let me know by dropping
-a comment bellow.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;References:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.bem.info/methodology/&quot;&gt;Official BEM site&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>MySQL queries fail due to ONLY_FULL_GROUP_BY sql_mode after updating to v5.7.*</title>
-    <link href="https://dareenzo.github.io/blog/2016/06/21/MySQL-Queries-failing-due-to-sql_mode=only_full_group_by-being-enabled-by-default-on-MySQL-5.7-update/"/>
-    <updated>2016-06-21T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2016/06/21/MySQL-Queries-failing-due-to-sql_mode=only_full_group_by-being-enabled-by-default-on-MySQL-5.7-update</id>
-    <content type="html">&lt;p&gt;On v5.7.8, MySQL, introduced a new kind of field: the almighty &lt;a href=&quot;https://dev.mysql.com/doc/refman/5.7/en/json.html&quot;&gt;JSON field&lt;/a&gt;,
-famous for its versatility and glory in the NoSQL world.&lt;/p&gt;
-
-&lt;p&gt;In a quest for staying up-to-date, using, benefiting and profiting from its awesome
-features — blog post on we use it coming soon — we had to upgrade our server
-from the now old v5.6.10.&lt;/p&gt;
-
-&lt;p&gt;The upgrade process was smooth and nothing of extraordinary popped-up in the logs
-— yes, we kept watch for a while just to make sure — so we believed we were
-safe … but, we were not …&lt;/p&gt;
-
-&lt;p&gt;A few hours later, errors like the following started filling the log:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Database error Expression #2 of SELECT list is not in GROUP BY clause and contains
-non-aggregated column &lt;code&gt;&amp;lt;column-name&amp;gt;&lt;/code&gt; which is not functionally dependent on
-columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-for query &lt;code&gt;&amp;lt;select-query-which-old-version-let-pass&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;There are two things to notice here&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;All of these queries were running before and MySQL was ok with how they were
-  written.&lt;/li&gt;
-  &lt;li&gt;The error message mentions incompatibility with a &lt;code&gt;sql_mode=only_full_group_by&lt;/code&gt;.
-  So what is this &lt;code&gt;sql_mode&lt;/code&gt;?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;This is what the official documentation has to say about the &lt;code&gt;sql_mode&lt;/code&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The MySQL server can operate in different SQL modes, and can apply these modes
-differently for different clients, depending on the value of the sql_mode system
-variable. DBAs can set the global SQL mode to match site server operating
-requirements, and each application can set its session SQL mode to its own
-requirements.&lt;/p&gt;
-
-  &lt;p&gt;Modes affect the SQL syntax MySQL supports and the data validation checks it
-performs. This makes it easier to use MySQL in different environments and to
-use MySQL together with other database servers.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;That meant to us that somewhere in this new version, MySQL changed it’s &lt;code&gt;sql_mode&lt;/code&gt;,
-and that we have to find this place and change things back. Again the official
-documentation helped us confirming our suspicious as it states that:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In MySQL 5.7.5, the ONLY_FULL_GROUP_BY SQL mode is enabled by default because
-GROUP BY processing has become more sophisticated to include detection of
-functional dependencies.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The temporary solution which we adapted was to set the &lt;code&gt;sql_mode&lt;/code&gt; to an empty
-value which then defaults to &lt;code&gt;NO_AUTO_CREATE_USER&lt;/code&gt; which came as default for v5.6.10&amp;gt;.
-But, in the end we’ll have to upgrade our queries to be compliant with the new
-&lt;code&gt;sql_mode&lt;/code&gt; as definitive fix.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;References:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.anujgakhar.com/2015/12/23/mysql-error-caused-by-sql_modeonly_full_group_by/&quot;&gt;MySQL Error caused by sql_mode=only_full_group_by&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-10.html&quot;&gt;Changes in MySQL 5.6.10 (2013-02-05, General Availability)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sql-mode-changes&quot;&gt;SQL Mode Changes in MySQL 5.7&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Interview during the SeedStars World - Maputo 2015 Contest!</title>
-    <link href="https://dareenzo.github.io/blog/2015/05/26/Interview-at-the-Seed-Stars-World-Maputo-Contest-2015/"/>
-    <updated>2015-05-26T00:00:00+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2015/05/26/Interview-at-the-Seed-Stars-World-Maputo-Contest-2015</id>
-    <content type="html">&lt;iframe src=&quot;http://rd.videos.sapo.mz/playhtml?file=http://rd.videos.sapo.mz/j9MqVow8bUIEWdRVDebE/mov/1&amp;amp;relatedVideos=none&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; width=&quot;400&quot; height=&quot;225&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Colocando Proxy no Ubuntu</title>
-    <link href="https://dareenzo.github.io/blog/2014/08/23/putting-a-proxy-on-ubuntu/"/>
-    <updated>2014-08-23T17:20:19+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2014/08/23/putting-a-proxy-on-ubuntu</id>
-    <content type="html">&lt;h2 id=&quot;no-sistema-operativo&quot;&gt;No Sistema operativo&lt;/h2&gt;
-
-&lt;p&gt;Para usar proxy em seu Ubuntu edite o ficheiro &lt;code&gt;/etc/environment&lt;/code&gt; adicionado com
-a estrutura seguinte:
-&lt;code&gt;tipo_de_proxy=&quot;http://usuario@senha@servidor:porta&quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Para quem usa uma conta de domínio, é sugestivo colocar o domínio como parte da
-linha como abaixo:
-&lt;code&gt;tipo_de_proxy=&quot;http://dominio/usuario@senha@servidor:porta&quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;A seguir um exemplo completo do ficheiro:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#Proxy settings
-http_proxy=&quot;http://dominio/usuario@s3n#4@prxserver:8080&quot;
-https_proxy=&quot;http://dominio/usuario@s3n#4prx@server:8080&quot;
-ftp_proxy=&quot;http://dominio/usuario@s3n#4@prxserver:8080&quot;
-no_proxy=&quot;localhost,127.0.0.1,localaddress,.localdomain.com&quot;
-HTTP_PROXY=&quot;http://dominio/usuario@s3n#4@server:8080&quot;
-HTTPS_PROXY=&quot;http://dominio/usuario@s3n#4@prxserver:8080&quot;
-FTP_PROXY=&quot;http://dominio/usuario@s3n#4@prxserver:8080&quot;
-NO_PROXY=&quot;localhost,127.0.0.1,localaddress,.localdomain.com&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note que para o endereço local nem sempre queremos usar o proxy dai o &lt;code&gt;no_proxy&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;no-gestor-de-pacotes-apt&quot;&gt;No gestor de pacotes APT&lt;/h2&gt;
-
-&lt;p&gt;Após colocar o proxy no sistema operativo, notará que os gestor de pacotes APT
-não consegue buscar novos pacotes. Isto porque ele usa uma outra configuração
-para o proxy.&lt;/p&gt;
-
-&lt;p&gt;A configuração consite em modificar/criar o ficheiro &lt;code&gt;/etc/apt/apt.conf&lt;/code&gt;
-adicionando nele uma linha com a estrutura:
-&lt;code&gt;Acquire::http::Proxy &quot;http://dominio\usuario:senha@servidor:porta&quot;;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;NOTE:&lt;/p&gt;
-
-&lt;p&gt;Apesar da estrutura de linha ser muito similar. Existe uma diferença na barra
-que separa o &lt;code&gt;dominio&lt;/code&gt; do &lt;code&gt;nome_de_usuario&lt;/code&gt;. Para o proxy de OS a barra deve ser
-para direita e para o proxy de APT é para a esquerda.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Alargando o HD no VirtualBox</title>
-    <link href="https://dareenzo.github.io/blog/2014/08/16/enlarging-virtual-boxes-hd-size/"/>
-    <updated>2014-08-16T12:21:03+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2014/08/16/enlarging-virtual-boxes-hd-size</id>
-    <content type="html">&lt;p&gt;Para alargar um disco virtual no VirtualBox, usa-se o comando VBoxManage em um
-Terminal de comandos.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Primeiro, desliga-se a máquina virtual - assegurar que o estado está definido
-  como desligado, não salvo.&lt;/li&gt;
-  &lt;li&gt;Em segundo lugar, abre-se o terminal de Comandos e vai-se para pasta de arquivos
-  da maquina virtual: &lt;code&gt;cd /mnt/dados/VirtualBox\ VMs/Ruindows/&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Executa-se o comando para alargar o HD da VM: &lt;code&gt;vboxmanage modifyhd &quot;&amp;lt;hd name&amp;gt;&quot; --resize&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Recuperando uma BD sem o Log</title>
-    <link href="https://dareenzo.github.io/blog/2014/08/15/recoverying-a-sqlserver-database-without-the-log-file/"/>
-    <updated>2014-08-15T20:46:14+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2014/08/15/recoverying-a-sqlserver-database-without-the-log-file</id>
-    <content type="html">&lt;p&gt;Então por algum motivo mágico consegui perder o .LDF correcto de uma BD.
-O .LDF &lt;em&gt;novo&lt;/em&gt; que tenho é antigo, e assim não consigo fazer o restore. que fazer?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;USE master
-GO
-
-SELECT NAME, STATE_DESC FROM SYS.DATABASES
-WHERE STATE_DESC='SUSPECT'
-GO
-
-ALTER DATABASE Nome_da_DB SET EMERGENCY
-GO
-
-DBCC CHECKDB (Nome_da_DB)
-GO
-
-ALTER DATABASE Nome_da_DB SET SINGLE_USER WITH ROLLBACK IMMEDIATE
-GO
-
-DBCC CHECKDB (Nome_da_DB, REPAIR_ALLOW_DATA_LOSS)
-GO
-
-ALTER DATABASE Nome_da_DB SET MULTI_USER
-GO
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Testes unitários com SmtpClient</title>
-    <link href="https://dareenzo.github.io/blog/2014/08/03/unit-tests-with-smtp/"/>
-    <updated>2014-08-03T09:47:59+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2014/08/03/unit-tests-with-smtp</id>
-    <content type="html">&lt;p&gt;Ao desenvolver um sistema que envie emails, geralmente não se deve enviar os
-emails quando se efectuam testes. Pelo contrário, os emails devem estar disponíveis
-para investigação / avaliação de resultado e/ou debugging. Como sempre existem
-várias alternativas para resolver este problema: Fakes, Mocks ou a Implementação
-padrão.&lt;/p&gt;
-
-&lt;p&gt;No caso particular do &lt;code&gt;SmtpClient&lt;/code&gt; é dificil fazer mocks uma vez que os métodos
-da classe não são virtuais, isto pelo menos usando a livrária &lt;a href=&quot;https://code.google.com/archive/p/moq/&quot;&gt;Moq&lt;/a&gt;.
-Felizmente, esta funcionalidade já está disponivel no .NET e só precisamos activa-la
-no ficheiro de configuração &lt;code&gt;app.config&lt;/code&gt; ou &lt;code&gt;web.config&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;system.net&amp;gt;
-  &amp;lt;mailSettings&amp;gt;
-    &amp;lt;smtp deliveryMethod=&quot;SpecifiedPickupDirectory&quot; from=&quot;noreply@tests.com&quot;&amp;gt;
-      &amp;lt;specifiedPickupDirectory pickupDirectoryLocation=&quot;C:\user\Desktop\project\project\bin\emails&quot; /&amp;gt;
-      &amp;lt;network host=&quot;localhost&quot;/&amp;gt;
-    &amp;lt;/smtp&amp;gt;
-  &amp;lt;/mailSettings&amp;gt;
-&amp;lt;/system.net&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note que a configuração &lt;code&gt;network host&lt;/code&gt; não é usada, mas sem ela ocorre uma
-excepção ao fazer o &lt;code&gt;Dispose&lt;/code&gt; do &lt;code&gt;SmtpClient&lt;/code&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Restaurando um backup de Share Point usando apenas a base dados</title>
-    <link href="https://dareenzo.github.io/blog/2014/07/26/restoring-a-sharepoint-backup-with-the-database-only/"/>
-    <updated>2014-07-26T09:57:07+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2014/07/26/restoring-a-sharepoint-backup-with-the-database-only</id>
-    <content type="html">&lt;p&gt;Então você tem que restaurar um backup de SharePoint mas não consegue fazê-lo
-usando a interface do &lt;em&gt;Central Administration&lt;/em&gt;, pelos mais variados erros.
-No entanto, você tem acesso directo a base de dados de conteúdo via SQL Server
-ou consegue identificar o ficheiro de backup da base de dados de conteúdo dos
-outros  na pasta onde tem o backup da &lt;em&gt;farm&lt;/em&gt; do SharePoint.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Primeiro faça o restore da base de dados no SQL Server.&lt;/li&gt;
-  &lt;li&gt;Adicione a base de dados ao SharePoint via PowerShell, usando o comando:
-  &lt;code&gt;stsadm -o addcontentdb - url &amp;lt;nova url&amp;gt; -databasename &amp;lt;nome da base de dados restaurada&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;!-- ![Adicionando Base de dados de conteudo ao sharepoint](/content/uploads/2014/07/Adicionando-Base-de-dados-de-conteudo-ao-sharepoint2-300x36.png) --&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Certifique de criar a &lt;em&gt;web application&lt;/em&gt; para associar a base de dados. Ao fazer
-  este passo o sharepoint irá criar uma base de dados de conteúdo, esta deverá
-  ser retirada para dar espaço para associação da aplicação com a BD que realmente
-  queremos usar.&lt;/li&gt;
-  &lt;li&gt;Para dissociar a DB recentemente criada da aplicação primeiro obtemos o seu
-  Id usando o comando &lt;code&gt;Get-SPContentDatabase&lt;/code&gt; e depos usamos o comando
-  &lt;code&gt;Dismount-SPContentDatabase&lt;/code&gt; para a dissociação.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;!-- ![Dissociar DB de SharePoint](/content/uploads/2014/07/Dissasociar-DB-de-SharePoint-300x78.png) --&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Associamos a nossa BD de conteúdo a aplicação usando o comando &lt;code&gt;Mount-SPContentDatabase&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Measuring query progress in SQL Server with DBCC!</title>
-    <link href="https://dareenzo.github.io/blog/2014/07/25/measuring-query-progress-in-sql-server/"/>
-    <updated>2014-07-25T15:09:42+02:00</updated>
-    <id>https://dareenzo.github.io/blog/2014/07/25/measuring-query-progress-in-sql-server</id>
-    <content type="html">&lt;p&gt;Então, hoje, depois de conseguir corromper uma base de dados tive de usar um
-bando de truques para conseguir restaurar a base de dados. Um dos passos envolve
-usar o comando &lt;code&gt;DBCC CHECK&lt;/code&gt; que leva muito tempo. Após uns 30 minutos estava em
-pânico e impaciente porque o processo demorava e não tinha ideia de quanto o
-processo já havia corrido. Como todo bom Googler fui googlar, e eis que achei a
-solução: &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/ms188754.aspx&quot;&gt;Dynamic Management Views (DMVs)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;As DMVs (e algumas funções) retornam dados sobre o estado do server, que podemos
-usar para monitorar a ‘saúde’ de um server. A DMV em destaque é &lt;code&gt;sys.dm_exec_requests&lt;/code&gt;,
-que permite ver quais os processos ou pedidos em execução. A DMV retorna os dados
-para várias base de dados, mas podemos sempre filtrar usando a clausula &lt;code&gt;WHERE&lt;/code&gt;
-como abaixo:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;SELECT session_id ,
-    request_id ,
-    percent_complete ,
-    estimated_completion_time ,
-    DATEADD(ms, estimated_completion_time, GETDATE()) AS TempoEstimado,
-    start_time,
-    status,
-    command,
-    *
-FROM sys.dm_exec_requests
-WHERE database_id = 23
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;No caso do &lt;code&gt;DBCC CHECK&lt;/code&gt; ele internamente subdivide-se em 3 outros processos,
-cada um com seu progresso respectivamente:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;DBCC CHECKALLOC&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;DBCC CHECKTABLE&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;DBCC CHECKATALOG&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Para ver o progresso destes processos também, podemos fazer o &lt;code&gt;JOIN&lt;/code&gt; com a DMV
-&lt;code&gt;sys.dm_os_tasks&lt;/code&gt; que lista todas as tarefas do OS com base no ID da sessão.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;SELECT *
-FROM sys.dm_exec_requests r
-    JOIN sys.dm_os_tasks t on r.session_id = t.session_id
-WHERE r.session_id = 69
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  
-
-</feed>
+know.&lt;/p&gt;</content><author><name>Paulo Phagula</name><email>paulo.phagula@gmail.com</email></author><category term="NoCode" /><category term="Writing" /><summary type="html">This article is more related to grammar and small details in language rather than the usual (coding). It tells how (accidentally) through reading code I came to learn that we actually have three (3) kinds of dashes instead of just one. I wrote this short post just so: we don't forget about them; their differences and when to use each.</summary></entry></feed>
